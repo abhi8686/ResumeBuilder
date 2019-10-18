@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap');
+
+body {
+	background-color: #f0f2f5;
+	font-family: 'Work Sans', sans-serif;
+}
+
+a, a:visited{
+	color: #0a2543;
+}
+.color-primary{
+  color: #3201c3 !important;
+}
+.grey {
+  color: #959aa8;
+}
+
+
+.navbar-white{
+	background-color: #fff;
+	box-shadow: 0 2px 4px 0 rgba(7, 26, 40, 0.05);
+  z-index: 1;
+  position: relative;
+  padding: 0 50px;
+}
+
+.logo{
+  max-height: 50px;
+  object-fit: cover;
+  width: 115px;
+}
+
+.nav-link button{
+	line-height: 1.5;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  height: 32px;
+  color: #fff;
+  background-color: #3201c3;
+  border-color: #3201c3;
+}
+.nav-link{
+	line-height: 2;
+	padding: 0 15px;
+	font-size: 14px;
+}
+
+.devise_bg{
+	background-image: url(asset_path('devise-bg.png')), linear-gradient(153deg, #4500e5, #3b05c7 46%, #19008a);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: calc(100vh - 48px);
+}
+.resume_card{
+  background-color: #fff;
+  margin-bottom: 15px;
+  padding: 0px 0px;  
+}
+.resume_header{
+  padding: 20px 20px;
+
+  border-bottom: 1px solid #F3F4F5;
+}
+
+.resume_header p {
+  font-size: 20px;
+  padding: 0 30px;
+  font-weight: 500;
+}
+.resume_content {
+  padding: 20px;
+}
+.resume_content p {
+  // color: #959aa8;
+  font-size: 14px;
+}
+.horizontal_divider{
+  border-right: 1px solid #F3F4F5;
+  min-width: 3vw;
+}
+.experience_header{
+  font-weight: 600;
+  font-size: 18px !important;
+}
+.bullet{
+  border: 8px solid #d6dade;
+  border-radius: 50%;
+  width: 1px;
+  position: absolute;
+  top: 8px;
+  left: -8px;
+}
+.experience_container{
+  position: relative;
+}
+
+.profile_picture{
+  border-radius: 50%;
+  max-width: 160px;
+}
+.badge-grey{
+  background-color: #f2f6f9;
+  color: #0a2543;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 300;
+}

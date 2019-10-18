@@ -1,0 +1,14 @@
+<div class="resume_card">
+	<div class="resume_header d-flex">
+		<img src="https://dummyimage.com/400x400" class="img-fluid profile_picture">
+		<% if current_user.id == @user.id %>
+			<img src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto align-self-start" >
+		<% end %>
+	</div>
+
+	<div class="resume_content ">
+		<p><span><img src="<%= asset_path 'email-icon.svg' %>" class="px-2"></span><%= @user.email %></p>
+		<p><span><img src="<%= asset_path 'phone-icon.svg' %>" class="px-2"></span><%= @user.phone %></p>
+		<p><span><img src="<%= asset_path 'location-icon.svg' %>" class="px-2"></span><%# @user.location %></p>
+	</div>
+</div>

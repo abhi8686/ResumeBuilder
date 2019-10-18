@@ -1,0 +1,13 @@
+<div class="resume_card">
+	<div class="resume_header d-flex align-middle">
+		<img src="<%= asset_path 'profile-icon.svg' %>" class="img-fluid">
+		<p class="mb-0">Profile Overview</p>
+		<% if current_user.id == @user.id %>
+			<img src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" >
+		<% end %>
+	</div>
+
+	<div class="resume_content">
+		<p class="grey">This is a sample profile. Entering dummy text here only for demonstration. Skills - Java, React, AWS.n,mm lk;l'./1234</p>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/blue/award</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.002578125 0 22 0 22 22 0.002578125 22"></polygon>
+    </defs>
+    <g id="icon/blue/award" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="trophy" transform="translate(1.000000, 1.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Clip-2"></g>
+            <path d="M19.8,4.84 C19.8,6.16 18.81,7.37 17.6,7.59 L17.6,3.3 L19.8,3.3 L19.8,4.84 Z M13.2,11 L11,9.79 L8.8,11 L9.35,8.8 L7.7,6.6 L10.01,6.6 L11,4.4 L11.99,6.6 L14.3,6.6 L12.65,8.8 L13.2,11 Z M2.2,4.84 L2.2,3.3 L4.4,3.3 L4.4,7.59 C3.19,7.26 2.2,6.16 2.2,4.84 Z M20.9,1.1 L17.6,1.1 L17.6,0 L4.4,0 L4.4,1.1 L1.1,1.1 C0.44,1.1 0,1.54 0,2.2 L0,4.84 C0,7.37 1.87,9.46 4.4,9.79 L4.4,9.9 C4.4,13.09 6.6,15.73 9.57,16.39 L8.8,18.7 L6.27,18.7 C5.83,18.7 5.39,19.03 5.28,19.47 L4.4,22 L17.6,22 L16.72,19.47 C16.61,19.03 16.17,18.7 15.73,18.7 L13.2,18.7 L12.43,16.39 C15.4,15.73 17.6,13.09 17.6,9.9 L17.6,9.79 C20.13,9.46 22,7.37 22,4.84 L22,2.2 C22,1.54 21.56,1.1 20.9,1.1 Z" id="Fill-1" fill="#3905C3" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

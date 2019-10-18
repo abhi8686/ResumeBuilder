@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/email</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.400000006">
+        <g id="resume-public" transform="translate(-50.000000, -228.000000)">
+            <g id="icon/email" transform="translate(50.000000, 224.000000)">
+                <g id="interface" transform="translate(0.833333, 4.166667)">
+                    <polygon id="Shape" fill="#010002" fill-rule="nonzero" points="9.16001142 7.35254566 0.826423135 0.0344901065 17.4933067 0.0344901065"></polygon>
+                    <polygon id="Shape" fill="#010002" fill-rule="nonzero" points="5.84025495 5.76708904 0 10.8958181 0 0.638401826"></polygon>
+                    <polygon id="Shape" fill="#010002" fill-rule="nonzero" points="6.5972793 6.43194444 9.16001142 8.68225647 11.7222412 6.43194444 17.4985807 11.5044597 0.82119102 11.5044597"></polygon>
+                    <polygon id="Shape" fill="#0A2543" fill-rule="nonzero" points="12.4792656 5.76734018 18.3197717 0.638401826 18.3197717 10.8958181"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
