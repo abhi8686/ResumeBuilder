@@ -1,42 +1,54 @@
 <div class="resume_card">
 	<div class="resume_header d-flex align-middle">
 		<img src="<%= asset_path 'work-icon.svg' %>" class="img-fluid">
-		<p class="mb-0">Education</p>
+		<p class="mb-0">Educations</p>
 		<% if current_user.id == @user.id %>
-			<span class="ml-auto">+ Add more educations</span>
+			<span class="ml-auto" onclick="ModalService.toggleModal('education')">+ Add more experience</span>
 		<% end %>
 	</div>
 
 	<div class="resume_content px-0 d-flex">
 		<div class="horizontal_divider">
-			
 		</div>
-		<div class="experience_container container">
-			<div class="bullet">
+		<div class="container-fluid">
+			<div class="row">
+				<% if @educations.count > 0 %>
+					<% @educations.each do |education| %>
+						<div class="col-12">
+							<div class="education_container" data-id="<%= education.id %>">
+								<div class="bullet">
+								</div>
+								<div class="d-flex">
+									<p class="color-primary experience_header mb-0" ><%= education.degree %></p>
+									<span class="ml-auto d-flex">
+										<img src="<%= asset_path 'calendar-icon.svg' %>" class="img-fluid">
+										<p class="mb-0 align-self-center px-3" data-date="<%= education.start_date %>">
+											<%= education.start_date.strftime("%b %Y") %> - <%= education.end_date.strftime("%b %Y") %> 
+										</p>
+										<% if current_user.id == @user.id %>
+											<img data-id="<%= education.id %>" onclick="ModalService.toggleModal('education', <%= education.id %>)" src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" >
 
-			</div>
-			<div class="d-flex">
-				<p class="color-primary experience_header mb-0">vsd</p>
-				<span class="ml-auto d-flex">
-					<img src="<%= asset_path 'calendar-icon.svg' %>" class="img-fluid">
-					<p class="mb-0 align-self-center px-3">Oct 2019 - Oct 2019</p>
-					<% if current_user.id == @user.id %>
-						<img src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" >
+										<% end %>
+									</span>
+								</div>
+								<div class="d-flex py-3">
+									<img src="<%= asset_path 'institute-icon.svg' %>" class="img-fluid">
+									<p class="mb-0 px-2 "><%= education.school_name %></p>
+								</div>
+								<div>
+									<p class="grey"><%= education.description %></p>
+								</div>
+							</div>
+						</div>
 					<% end %>
-				</span>
+				<% end %>
 			</div>
-			<div class="d-flex py-3">
-				<img src="<%= asset_path 'institute-icon.svg' %>" class="img-fluid">
-				<p class="mb-0 px-2 ">sdvsdvsdv</p>
-				<img src="<%= asset_path 'location-icon.svg' %>" class="img-fluid" >
-				<p class="mb-0 px-2">dscsdcsdcasd</p>
-			</div>
-			<div>
-				<p class="grey">dscsdcsdcasd</p>
-			</div>
-
-			<%= render partial: 'projects' %>
 		</div>
 	</div>
-	
+</div>
+
+<div class="modal" id="education_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    
+  </div>
 </div>

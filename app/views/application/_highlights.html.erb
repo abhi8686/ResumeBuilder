@@ -3,7 +3,7 @@
 		<img src="<%= asset_path 'profile-icon.svg' %>" class="img-fluid">
 		<p class="mb-0">Highlights</p>
 		<% if current_user.id == @user.id %>
-			<img src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" >
+			<img src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" onclick="$('#highlights_input').modal()">
 		<% end %>
 	</div>
 
@@ -11,3 +11,36 @@
 		<a href="#" class="badge badge-grey">React-Ninja</a>
 	</div>
 </div>
+
+
+
+<div class="modal" id="highlights_input" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Highlights</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="font-14 font-semibold">Please add the top highlights of your profile. For eg. React Ninja, Amazon, Software Architect, etc.(Add highlights by pressing Enter)</p>
+        <input type="text" class="form-control highlights_input">
+
+        <div class="highlights_container py-3">
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		TagsInput.startTags('.highlights_input', '.highlights_container')
+	})
+</script>

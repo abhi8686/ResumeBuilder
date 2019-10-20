@@ -12,7 +12,9 @@
 //
 //= require rails-ujs
 //= require jquery3
+//= require jquery.serializejson
 //= require popper
+//= require modal_service
 //= require bootstrap
 //= require activestorage
 //= require turbolinks

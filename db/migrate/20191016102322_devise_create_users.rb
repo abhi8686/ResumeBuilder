@@ -39,6 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :city
       t.string :country
       t.string :unique_id, index: true, unique: true
+      t.text :profile_info
       t.timestamps null: false
     end
 
