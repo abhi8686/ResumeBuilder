@@ -2,7 +2,7 @@
 	<div class="resume_header d-flex align-middle">
 		<img src="<%= asset_path 'profile-icon.svg' %>" class="img-fluid">
 		<p class="mb-0">Highlights</p>
-		<% if current_user.id == @user.id %>
+		<% if current_user  == @user %>
 			<img src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" onclick="$('#highlights_input').modal()">
 		<% end %>
 	</div>

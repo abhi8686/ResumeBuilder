@@ -2,7 +2,7 @@
 	<div class="resume_header d-flex align-middle">
 		<img src="<%= asset_path 'award-icon.svg' %>" class="img-fluid">
 		<p class="mb-0">Awards, Events And Publications</p>
-		<% if current_user.id == @user.id %>
+		<% if current_user == @user && current_user %>
 			<span class="ml-auto" onclick="ModalService.toggleModal('award')">+ Add more experience</span>
 		<% end %>
 	</div>
@@ -22,7 +22,7 @@
 								<span class="ml-auto d-flex">
 									<img src="<%= asset_path 'calendar-icon.svg' %>" class="img-fluid">
 									<p class="mb-0 align-self-center px-3" data-date="<%= award.award_date %>"><%= award.award_date.strftime("%^b %Y") %></p>
-									<% if current_user.id == @user.id %>
+									<% if current_user == @user %>
 										<img data-id="<%= award.id %>" onclick="ModalService.toggleModal('award', <%= award.id %>)" src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" >
 
 									<% end %>

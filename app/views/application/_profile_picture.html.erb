@@ -1,8 +1,11 @@
 <div class="resume_card">
 	<div class="resume_header d-flex">
-		<img src="https://dummyimage.com/400x400" class="img-fluid profile_picture">
-		<% if current_user.id == @user.id %>
-			<img src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto align-self-start" >
+		<img src="<%= @user.get_profile_pic %>" class="img-fluid profile_picture">
+		<% if current_user && current_user == @user  %>
+			<form name="" onsubmit="">
+				<input type="file" name="profile_pic" id="profile_pic" class="d-none">
+			</form>
+			<img src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto align-self-start" onclick="$('#profile_pic').click()" >
 		<% end %>
 	</div>
 
@@ -12,3 +15,9 @@
 		<p><span><img src="<%= asset_path 'location-icon.svg' %>" class="px-2"></span><%# @user.location %></p>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		ModalService.init()
+	})
+</script>

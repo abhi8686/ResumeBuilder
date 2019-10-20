@@ -1,5 +1,6 @@
 class ProfileController < ApplicationController
-
+	before_action :authenticate_user!
+	
 	def index
 		@user = current_user
 		@awards = @user.awards 
@@ -7,8 +8,16 @@ class ProfileController < ApplicationController
 		@educations = @user.educations
 	end
 
-	def create
-		# CommonImage.upload_from_file(params[:file], User.versions, User.name)
+	def update_profile_pic
+		@user = current_user
+		data = CommonImage.upload_from_file(params[:file], ProfileImage.versions, ProfileImage.name)
+		@user.profile_image_id = data.id
+
+		if @user.save
+			render json: {},status: 200
+		else
+			render json: {}, status: 500
+		end
 	end
 
 	def profile_info

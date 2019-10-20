@@ -4,6 +4,12 @@ body {
 	background-color: #f0f2f5;
 	font-family: 'Work Sans', sans-serif;
 }
+.h-100{
+  height: -webkit-fill-available;
+}
+.font-white{
+  color: #fff;
+}
 
 a, a:visited{
 	color: #0a2543;

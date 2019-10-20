@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_171904) do
+ActiveRecord::Schema.define(version: 2019_10_20_223055) do
 
   create_table "awards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(version: 2019_10_20_171904) do
     t.index ["user_id"], name: "index_highlights_on_user_id"
   end
 
+  create_table "profile_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "original"
+    t.string "square"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -72,6 +79,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_171904) do
     t.text "profile_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "profile_image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unique_id"], name: "index_users_on_unique_id"

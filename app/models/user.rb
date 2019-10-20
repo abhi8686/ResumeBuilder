@@ -18,13 +18,7 @@ class User < ApplicationRecord
   	return true
   end
 
-  @@versions = {
-    :profile_square => [300, 300]
-  }
 
-  def self.versions
-    @@versions
-  end
 
   def update_info parameters
     ["controller", "action"].map{|x| parameters.delete(x)}
@@ -43,6 +37,15 @@ class User < ApplicationRecord
     obj = obj_class.find(id)
     if obj.user_id = self.id
       obj.destroy
+    end
+  end
+
+  def get_profile_pic
+    if ProfileImage.where(id: self.profile_image_id).count > 0 
+      # binding.pry
+      ProfileImage.find(self.profile_image_id).square
+    else
+      'https://dummyimage.com/400x400'
     end
   end
 end

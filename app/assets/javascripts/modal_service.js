@@ -6,7 +6,42 @@ ModalService.init = function(){
 
 ModalService.initHandler = function(){
 
+	$('#profile_pic').on('change', function(){
+		ModalService.previewFile(this)
+		ModalService.changeProfileImage()
+	})
 }
+ModalService.changeProfileImage = function(){
+	var formData = new FormData();
+	formData.append('file', $('#profile_pic')[0].files[0]);
+
+		$.ajax({
+       url : '/profile/update_profile_pic',
+       type : 'POST',
+       data : formData,
+       processData: false,
+       contentType: false,
+       beforeSend: function(xhr) {
+		    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+		  	},  
+       success : function(data) {
+           console.log(data);
+           alert(data);
+       }
+		});
+}
+
+ModalService.previewFile = function(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) {
+      $('.profile_picture').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0])
+  }
+}
+
 ModalService.profileInfoModal = function(){
 	$('#profile_info_modal').modal()
 	$('#profile_info_input').val($('.profile_info_content').html())
@@ -81,4 +116,8 @@ ModalService.deleteEntity = function(modal_entity,id){
 	  	$('.' + modal_entity + '_container[data-id='+ id +']').html('')	
 	  }
 	})
+}
+
+ModalService.imageUpload = function(){
+
 }

@@ -1,4 +1,5 @@
 require_relative 'boot'
+require 'dotenv/load'
 
 require 'rails/all'
 
@@ -16,8 +17,11 @@ module ResumeBuilder
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
    	config.aws_temp_path = Rails.root.join('public', 'temp-uploads')
-
-   	
-
+    config.aws_credentials={
+      access_key: ENV['ACCESS_KEY'],
+      secret_access_key: ENV['SECRET_ACCESS_KEY']  ,
+      bucket: ENV['BUCKET'],
+      region: ENV['REGION']
+    }
   end
 end
