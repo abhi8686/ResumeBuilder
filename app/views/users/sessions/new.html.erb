@@ -1,0 +1,35 @@
+<div class="container h-100">
+  <div class="row align-items-center h-100">
+    <div class="col-md-4">
+      <h2 class="font-white">Take the first step towards showcasing your skills and work the right way!</h2>
+    </div>
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <div class="card p-5">
+        <h5 class="text-center">Login to your account</h5>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-group py-3">
+            <%= f.label :email, class: 'required' %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email Address' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password, class: 'required' %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+          </div>
+
+
+          <div class="actions py-4">
+            <%= f.submit "Log in", class: 'btn btn-primary btn-block py-3' %>
+          </div>
+          <div>
+            <a href="/users/sign_up"><p>Don't have an account? Sign Up</p></a>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

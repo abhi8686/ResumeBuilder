@@ -1,0 +1,51 @@
+<div class="resume_card">
+	<div class="resume_header d-flex align-middle">
+		<img src="<%= asset_path 'award-icon.svg' %>" class="img-fluid">
+		<p class="mb-0">Awards, Events And Publications</p>
+		<% if current_user == @user && current_user %>
+			<span class="ml-auto" onclick="ModalService.toggleModal('award')">+ Add more experience</span>
+		<% end %>
+	</div>
+
+	<div class="resume_content px-0 d-flex">
+		<div class="horizontal_divider">
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<% @awards.each do |award| %>
+					<div class="col-12">
+						<div class="award_container" data-id="<%= award.id %>">
+							<div class="bullet">
+							</div>
+							<div class="d-flex">
+								<p class="color-primary experience_header mb-0" ><%= award.award_name %></p>
+								<span class="ml-auto d-flex">
+									<img src="<%= asset_path 'calendar-icon.svg' %>" class="img-fluid">
+									<p class="mb-0 align-self-center px-3" data-date="<%= award.award_date %>"><%= award.award_date.strftime("%^b %Y") %></p>
+									<% if current_user == @user %>
+										<img data-id="<%= award.id %>" onclick="ModalService.toggleModal('award', <%= award.id %>)" src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" >
+
+									<% end %>
+								</span>
+							</div>
+							<div class="d-flex py-3">
+								<img src="<%= asset_path 'institute-icon.svg' %>" class="img-fluid">
+								<p class="mb-0 px-2 "><%= award.institute_name %></p>
+							</div>
+							<div>
+								<p class="grey"><%= award.description %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>	
+</div>
+
+
+<div class="modal" id="award_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    
+  </div>
+</div>

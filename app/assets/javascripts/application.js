@@ -11,6 +11,13 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery3
+//= require jquery.serializejson
+//= require bootstrap-datepicker
+//= require parsley.min
+//= require popper
+//= require modal_service
+//= require bootstrap
 //= require activestorage
 //= require turbolinks
 //= require_tree .

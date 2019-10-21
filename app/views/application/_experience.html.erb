@@ -1,0 +1,53 @@
+<div class="resume_card">
+	<div class="resume_header d-flex align-middle">
+		<p class="mb-0">Experience and Projects</p>
+		<% if current_user == @user %>
+			<span class="ml-auto" onclick="ModalService.toggleModal('experience')">+ Add more experience</span>
+		<% end %>
+	</div>
+
+	<div class="resume_content px-0 d-flex">
+		<div class="horizontal_divider">
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<% @experiences.each do |experience| %>
+					<div class="experience_container container">
+						<div class="bullet">
+
+						</div>
+						<div class="d-flex">
+							<p class="color-primary experience_header mb-0"><%= experience.title %></p>
+							<span class="ml-auto d-flex">
+								<img src="<%= asset_path 'calendar-icon.svg' %>" class="img-fluid">
+								<p class="mb-0 align-self-center px-3"><%= experience.start_date.strftime("%b %Y") %> - <%= experience.end_date.strftime("%b %Y") %> </p>
+								<% if current_user == @user %>
+									<img src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" >
+								<% end %>
+							</span>
+						</div>
+						<div class="d-flex py-3">
+							<img src="<%= asset_path 'institute-icon.svg' %>" class="img-fluid">
+							<p class="mb-0 px-2 "><%= experience.company_name %></p>
+							<img src="<%= asset_path 'location-icon.svg' %>" class="img-fluid" >
+							<p class="mb-0 px-2"><%= experience.location %></p>
+						</div>
+						<div>
+							<p class="grey"><%= experience.description %></p>
+						</div>
+
+						<%= render partial: 'project', :locals => {:projects => experience.projects, experience: experience} %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+
+<div class="modal" id="experience_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    
+  </div>
+</div>
