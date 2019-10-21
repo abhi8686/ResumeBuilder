@@ -20,6 +20,10 @@ a, a:visited{
 .grey {
   color: #959aa8;
 }
+
+.btn-primary{
+  background-color: #3201c3;
+}
 .font-14{
   font-size: 14px;
 }
@@ -114,6 +118,14 @@ a, a:visited{
   top: 8px;
   left: -8px;
 }
+.project_bullet{
+  border: 8px solid #d6dade;
+  border-radius: 50%;
+  width: 1px;
+  position: absolute;
+  top: 26px;
+  left: 28px;
+}
 .experience_container{
   position: relative;
 }
@@ -157,4 +169,17 @@ a, a:visited{
 }
 .required:after{
   content: ' ';
+}
+.project_container{
+  border: 1px solid #F3F4F5;
+  padding: 20px;
+  margin: 0px 20px;
+}
+
+.border-none{
+  border: 0px;
+}
+
+.bootstrap-tagsinput input{
+  width: 100vw;
 }

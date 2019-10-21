@@ -6,6 +6,17 @@ class ProfileController < ApplicationController
 		@awards = @user.awards 
 		@certifications = @user.certifications
 		@educations = @user.educations
+		@experiences = @user.experiences
+		@highlights = @user.highlights
+	end
+
+	def highlights
+		@user = current_user
+		if @user.updateHighlights(params[:highlights])
+			render json: {status: true}, status: 200
+		else
+			render json: {status: false}, status: 500
+		end
 	end
 
 	def update_profile_pic
@@ -31,7 +42,8 @@ class ProfileController < ApplicationController
 
 	def get_modal
 		obj_class = params[:entity].split('_')[0].classify.constantize
-		@obj = params[:id] ? obj_class.find(params[:id]) : obj_class.new
+		@obj = !params[:id].blank? ? obj_class.find(params[:id]) : obj_class.new
+		@experience = params[:experience_id]
 		render partial: "#{params[:entity].split('_')[0]}_modal", status: 200	
 	end
 

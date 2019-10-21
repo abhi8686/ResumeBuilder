@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_223055) do
+ActiveRecord::Schema.define(version: 2019_10_21_033657) do
 
   create_table "awards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(version: 2019_10_20_223055) do
     t.index ["user_id"], name: "index_educations_on_user_id"
   end
 
+  create_table "experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.string "company_name"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "location"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_experiences_on_user_id"
+  end
+
   create_table "highlights", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name", null: false
@@ -62,6 +75,21 @@ ActiveRecord::Schema.define(version: 2019_10_20_223055) do
     t.string "square"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "project_name", null: false
+    t.string "skills", null: false
+    t.string "app_link"
+    t.date "start_date", null: false
+    t.date "end_date"
+    t.text "description", null: false
+    t.bigint "user_id"
+    t.bigint "experience_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_projects_on_experience_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

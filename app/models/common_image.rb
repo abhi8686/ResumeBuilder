@@ -44,7 +44,6 @@ class CommonImage < ActiveRecord::Base
       new_img[k] = url
       File.delete("#{temp_file_path}/#{temp_file_name}") if File.exist?("#{temp_file_path}/#{temp_file_name}")
     end
-    binding.pry
     new_img.save
     new_img
   end

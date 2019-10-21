@@ -63,9 +63,9 @@ ModalService.submitProfileInfo = function(){
 	  });
 }
 
-ModalService.toggleModal = function(event_name, id){
+ModalService.toggleModal = function(event_name, id, exp_id){
 	$('#'+event_name+'_modal').modal('toggle')
-	ModalService.getModalContent(event_name + '_modal', id)
+	ModalService.getModalContent(event_name + '_modal', id, exp_id)
 }
 
 ModalService.submitForm = function(ele){
@@ -87,17 +87,18 @@ ModalService.submitForm = function(ele){
 	return false
 }
 
-ModalService.getModalContent = function(modal_name, id){
+ModalService.getModalContent = function(modal_name, id, exp_id){
 	$.ajax({
 	  method: "GET",
 	  url: "/profile/get_modal",
-	  data: { entity: modal_name, id },
+	  data: { entity: modal_name, id , experience_id: exp_id },
 	  beforeSend: function(xhr) {
 	    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
 	  },
 	})
 	  .done(function( msg ) {
 	  	$('#' + modal_name + ' .modal-dialog').html(msg)
+
 	  });
 
 }
@@ -114,10 +115,30 @@ ModalService.deleteEntity = function(modal_entity,id){
 	  success: function(){
 	  	$('#' + modal_entity + '_modal').modal('toggle')
 	  	$('.' + modal_entity + '_container[data-id='+ id +']').html('')	
+	  		  document.location.reload()
+
 	  }
 	})
 }
 
 ModalService.imageUpload = function(){
 
+}
+
+ModalService.updateHighLights = function(){
+	values = $('.highlights_input').tagsManager('tags');
+	$.ajax({
+	  method: "POST",
+	  url: "/profile/highlights",
+	  data: { highlights: values },
+	  beforeSend: function(xhr) {
+	    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+	  },
+	})
+	  .done(function( msg ) {
+	  	$('#highlights_modal').html(msg)
+
+		  document.location.reload()
+
+	  });
 }

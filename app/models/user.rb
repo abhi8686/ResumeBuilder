@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :awards, dependent: :destroy
   has_many :certifications, dependent: :destroy
   has_many :educations, dependent: :destroy
+  has_many :experiences, dependent: :destroy
 
   def create_unique_id
   	self.unique_id = SecureRandom.hex(10)
@@ -42,10 +43,18 @@ class User < ApplicationRecord
 
   def get_profile_pic
     if ProfileImage.where(id: self.profile_image_id).count > 0 
-      # binding.pry
       ProfileImage.find(self.profile_image_id).square
     else
       'https://dummyimage.com/400x400'
     end
+  end
+
+  def updateHighlights highlights
+    self.highlights.destroy_all
+    highlights.each do |x|
+      Highlight.where(name: x, user_id: self.id).first_or_create
+    end
+    return true
+ 
   end
 end
