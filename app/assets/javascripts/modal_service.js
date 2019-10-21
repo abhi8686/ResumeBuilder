@@ -98,6 +98,8 @@ ModalService.getModalContent = function(modal_name, id, exp_id){
 	})
 	  .done(function( msg ) {
 	  	$('#' + modal_name + ' .modal-dialog').html(msg)
+	  		$('.datepicker').datepicker();
+
 
 	  });
 

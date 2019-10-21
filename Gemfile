@@ -71,3 +71,4 @@ gem 'rmagick'
 
 # for amazon image upload
 gem 'aws-sdk', '~> 2'
+gem 'bootstrap-datepicker-rails'
