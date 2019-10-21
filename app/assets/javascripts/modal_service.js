@@ -26,7 +26,6 @@ ModalService.changeProfileImage = function(){
 		  	},  
        success : function(data) {
            console.log(data);
-           alert(data);
        }
 		});
 }
@@ -71,7 +70,6 @@ ModalService.toggleModal = function(event_name, id, exp_id){
 ModalService.submitForm = function(ele){
 	key_name = ele + 's'
 	data = {}
-	alert()
 	data[key_name] = $('#' + ele + '_form').serializeJSON()
 	$.ajax({
 	  method: "POST",
@@ -106,7 +104,6 @@ ModalService.getModalContent = function(modal_name, id, exp_id){
 }
 
 ModalService.deleteEntity = function(modal_entity,id){
-	alert()
 	$.ajax({
 	  method: "DELETE",
 	  url: "/profile/delete",
