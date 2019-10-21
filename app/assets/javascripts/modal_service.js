@@ -91,7 +91,7 @@ ModalService.getModalContent = function(modal_name, id, exp_id){
 	$.ajax({
 	  method: "GET",
 	  url: "/profile/get_modal",
-	  data: { entity: modal_name, id , experience_id: exp_id },
+	  data: { entity: modal_name, id: id , experience_id: exp_id },
 	  beforeSend: function(xhr) {
 	    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
 	  },
