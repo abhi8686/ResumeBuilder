@@ -23,7 +23,7 @@
 									<span class="ml-auto d-flex">
 										<img src="<%= asset_path 'calendar-icon.svg' %>" class="img-fluid">
 										<p class="mb-0 align-self-center px-3" data-date="<%= certification.start_date %>">
-											<%= certification.start_date.strftime("%b %Y") %> - <%= certification.end_date.strftime("%b %Y") %> 
+											<%= certification.start_date.strftime("%b %Y") if certification.start_date %> - <%= certification.end_date.strftime("%b %Y") if certification.end_date %> 
 										</p>
 										<% if current_user == @user %>
 											<img data-id="<%= certification.id %>" onclick="ModalService.toggleModal('certification', <%= certification.id %>)" src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" >

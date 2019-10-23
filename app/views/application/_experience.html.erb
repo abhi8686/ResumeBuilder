@@ -20,7 +20,7 @@
 							<p class="color-primary experience_header mb-0"><%= experience.title %></p>
 							<span class="ml-auto d-flex">
 								<img src="<%= asset_path 'calendar-icon.svg' %>" class="img-fluid">
-								<p class="mb-0 align-self-center px-3"><%= experience.start_date.strftime("%b %Y") %> - <%= experience.end_date.strftime("%b %Y") %> </p>
+								<p class="mb-0 align-self-center px-3"><%= experience.start_date.strftime("%b %Y") if experience.start_date %> - <%= experience.end_date.strftime("%b %Y") if experience.end_date %> </p>
 								<% if current_user == @user %>
 									<img src="<%= asset_path 'edit-icon.svg' %>" class="img-fluid ml-auto" >
 								<% end %>
