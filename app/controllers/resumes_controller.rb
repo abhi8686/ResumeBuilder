@@ -4,5 +4,7 @@ class ResumesController < ApplicationController
 		@awards = @user.awards 
 		@certifications = @user.certifications
 		@educations = @user.educations
+		@experiences = @user.experiences
+		@highlights = @user.highlights
   end
 end
